@@ -6,6 +6,10 @@ describe('Parabank - Login Test', () => {
     cy.get('input[name="username"]').type(user.username)
     cy.get('input[name="password"]').type(user.password)
     cy.get('input[value="Log In"]').click()
+    //UI TESTS
+    cy.get('#leftPanel').should('be.visible')
+    cy.get('#rightPanel').should('be.visible')
+    
 
     cy.contains('Accounts Overview').should('be.visible')
   });
